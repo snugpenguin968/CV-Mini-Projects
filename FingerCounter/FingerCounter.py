@@ -15,7 +15,6 @@ print(myList)
 overlayList = []
 for imPath in myList:
     image = cv2.imread(f'{folderPath}/{imPath}')
-    # print(f'{folderPath}/{imPath}')
     overlayList.append(image)
 
 print(len(overlayList))
@@ -29,7 +28,6 @@ while True:
     success, img = cap.read()
     img = detector.findHands(img)
     lmList = detector.findPosition(img, draw=False)
-    # print(lmList)
 
     if len(lmList) != 0:
         fingers = []
